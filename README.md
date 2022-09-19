@@ -8,7 +8,7 @@ Project description (~1 paragraph)
 ## Team Members and Roles
 
 * TEJASWI MANCHINEELLA (Role 1, Role 2)
-* Member 2 (Role 3, Role 4)
+* [SELINA MOHAPATRA](https://github.com/SelinaMohapatra/CIS641-HW2-Mohapatra)
 * Member 3 (Role 5, Role 6)
 
 ## Prerequisites
