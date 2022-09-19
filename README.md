@@ -1,10 +1,13 @@
-# Team Name
+# SUNRISERS
+[TEJASWI 
+MANCHINEELLA](https://github.com/manchint/CIS641-HW2-manchineella)
+
 
 Project description (~1 paragraph)
 
 ## Team Members and Roles
 
-* Member 1 (Role 1, Role 2)
+* TEJASWI MANCHINEELLA (Role 1, Role 2)
 * Member 2 (Role 3, Role 4)
 * Member 3 (Role 5, Role 6)
 
