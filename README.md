@@ -9,7 +9,7 @@ Project description (~1 paragraph)
 
 * TEJASWI MANCHINEELLA (Role 1, Role 2)
 * [SELINA MOHAPATRA](https://github.com/SelinaMohapatra/CIS641-HW2-Mohapatra)
-* Member 3 (Role 5, Role 6)
+* [ASHUTOSH KIRAN POLOGI](https://github.com/ashutoast7/CIS641-HW2-pologia) 
 
 ## Prerequisites
 
