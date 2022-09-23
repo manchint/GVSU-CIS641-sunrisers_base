@@ -25,7 +25,7 @@ __Database:__ Mysql
 
 # Method/Approach
 
-(What is your estimated "plan of attack" for developing this project)
+We are planning on using the Agile method where initially we list down all the features which we are planning to develop. Initially We are planning to start by designing the Database and finalize the ER model.After we are planning to start work on the Backend API by Identifying the format for the Request and the Response. Along with Backend we will also work on UI designing and the development as it doesn’t have any dependencies and Finally we are planning to integrate the API with the UI. We are planning to  write the test case and test the feature against these test cases.We are planning to repeat this process for each and every feature. We are planning to do regression testing after every feature so that we can avoid any regression issues and fix them.
 
 # Estimated Timeline
 
