@@ -32,8 +32,10 @@ We decided to make every feature as one individual Milestone and each Milestone 
 - SignUp Screen
 - Logout Screen
 - Home Screen 
-    -> List of Recipe\n
+    -> List of Recipe
+
     ->Filter to get the Recipe based on the Item we searched
+    
     -> Like Button
     -> Comment box
     ->Adding new food item
