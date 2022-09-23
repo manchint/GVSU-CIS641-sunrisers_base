@@ -4,11 +4,21 @@ Team members: Tejaswi manchineella, Selina Mohapatra, Mahesh Thakkilapati, Ashut
 
 # Introduction
 
-(In 2-4 paragraphs, describe your project concept)
+Cooking is an art; turning an ordinary meal into a fine culinary dish or turning a healthy snack into a lip-smacking snack is all about knowing the right recipe with the right ingredients. However, in a busy schedule searching for the right recipes of choice based on the ingredients available in the kitchen is a time-consuming job. 
+
+Hence we are proposing “The Cook Book”, a modern recipe sharing website, which aims to provide users with a variety of food recipes from healthy to various gourmet, super quick to fine culinary dishes with the ingredients available to the user.  
+
+A user can register on the website and can browse through a variety of recipes with the help of the powerful search feature with sorting and filtering, user can retrieve recipes based on the ingredients provided, user can like a recipe, provide comments and reviews on recipes and upload own recipes and contribute to the system. A user can also filter out the recipes based on the number of likes. Food is not just about taste; it is also about its nutritional value thus each recipe contains its nutritional details, so that the user can identify meals according to their calorie intake and add them to their regular diet and meal preps plan. 
+
+The website does not just make cooking easier, faster, and convenient but also gives users an opportunity to share their culinary experience with others. 
+
 
 # Anticipated Technologies
 
-(What technologies are needed to build this project)
+Below are the technologies that would be used to implement the project:
+ __Front end:__ Front end:  React,html,css
+__Backend:__ Spring boot(spring rest,data jpa,actuator, jms)
+__Database:__ Mysql
 
 # Method/Approach
 
