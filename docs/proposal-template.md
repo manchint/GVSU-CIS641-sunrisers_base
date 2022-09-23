@@ -1,6 +1,6 @@
-Team name:
+Team name: Sunrisers
 
-Team members:
+Team members: Tejaswi manchineella, Selina Mohapatra, Mahesh Thakkilapati, Ashutosh Kiran Pologi.
 
 # Introduction
 
