@@ -16,8 +16,11 @@ The website does not just make cooking easier, faster, and convenient but also g
 # Anticipated Technologies
 
 Below are the technologies that would be used to implement the project:
- __Front end:__ Front end:  React,html,css
+
+ __Front end:__  React,html,css
+ 
 __Backend:__ Spring boot(spring rest,data jpa,actuator, jms)
+
 __Database:__ Mysql
 
 # Method/Approach
