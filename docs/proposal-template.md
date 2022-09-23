@@ -26,7 +26,21 @@ __Database:__ Mysql
 
 # Estimated Timeline
 
-(Figure out what your major milestones for this project will be, including how long you anticipate it *may* take to reach that point)
+We are planning to have milestones which will help us track the progress of the entire project. 
+We decided to make every feature as one individual Milestone and each Milestone will have subtasks like UI, Backend, Integration, Testing. Here are the few milestones which we have identified so far based on our project plan.
+- Login Screen
+- SignUp Screen
+- Logout Screen
+- Home Screen 
+    -> List of Recipe
+    ->Filter to get the Recipe based on the Item we searched
+    -> Like Button
+    -> Comment box
+    ->Adding new food item
+- Testing
+
+We planned to have the Milestones completed based on the order mentioned above and we are confident that we will be finishing up our proiect before the deadline.
+
 
 # Anticipated Problems
 ## * Meeting/ Coordinating
