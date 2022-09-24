@@ -16,4 +16,13 @@ The website does not just make cooking easier, faster, and convenient but also g
 
 ## Prerequisites
 
+* knowlegde of bootstrap
+* Experience with any Javascript frameworks
+* Should be able to understand Java
+
 ## Run Instructions
+
+We are currently planning on running on the local machines which might require following things
+
+* Node Js
+* Java Environment setup
