@@ -58,7 +58,7 @@
     <li> Log Out
         <ol type="1">
             <li>The system shall allow the registered user to logout.</li>
-            <li>The system shall redirect to the login page after the user logs out successfully./li>
+            <li>The system shall redirect to the login page after the user logs out successfully.</li>
         </ol>
     </li>
 </ol>
