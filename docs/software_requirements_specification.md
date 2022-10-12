@@ -30,8 +30,6 @@ The purpose of the Software Requirement Specification is to define assumptions a
             <li>The system shall allow the registered user to add filters on the search.</li>
             <li>The system shall allow the registered user to search for recipes based on the number of likes on recipes.</li>
             <li>The system shall fetch limited data per page.</li>
-            <li>The system shall allow the registered user to search for recipes based on the number of likes on recipes.</li>
-            <li>The system shall fetch limited data per page.</li>
         </ol>
     </li>
     <li> View Recipe
