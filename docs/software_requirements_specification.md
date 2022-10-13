@@ -73,7 +73,7 @@ The purpose of the Software Requirement Specification is to define assumptions a
         </ol>
     </li>
     <li> Accesebility
-        <ol type="2">
+        <ol type="1">
             <li>The system shall be rendered on screen in less than 2 seconds.</li>
             <li>The system should enable the users to Comment a recipe in less than 10 seconds.</li>
             <li>The system should enable the users to search a recipe in less than 10 seconds.<li>
@@ -81,19 +81,19 @@ The purpose of the Software Requirement Specification is to define assumptions a
         </ol>
     </li>
      <li> Compatability
-        <ol type="3">
+        <ol type="1">
             <li>The System should be supported by all types of Web Browsers.</li>
         </ol>
     </li>
     <li> Restricting Users
-        <ol type="4">
+        <ol type="1">
             <li>The system should not allow users to see personal identifiable information (PII) of other users.</li>
             <li>The system should not allow non-registered users to see the data.</li>
             <li>The system shouldn’t allow user to upload the recipe. Such attempt should be reported to the administrator.<li>
         </ol>
     </li>
     <li> Reliability
-        <ol type="5">
+        <ol type="1">
             <li>The system should enable maintaining services with 0 downtime.</li>
             <li>The system should be able to scale up and scale down based on the load on the website.</li>
             <li>The system should pass all the test cases(for that feature) at any point of development.<li>
@@ -101,17 +101,17 @@ The purpose of the Software Requirement Specification is to define assumptions a
         </ol>
     </li>
     <li> User Friendly
-        <ol type="6">
+        <ol type="1">
             <li>The system should be easy to use for a non-technical person.</li>
         </ol>
     </li>
     <li> Tracking Activities
-        <ol type="7">
+        <ol type="1">
             <li>The system should log the action done on the database.</li>
         </ol>
     </li>
     <li> Structuring
-        <ol type="8">
+        <ol type="1">
             <li>The system should follow the folder structure decided by the technical architecture for further adding any feature.</li>
         </ol>
     </li>
