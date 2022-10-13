@@ -76,8 +76,8 @@ The purpose of the Software Requirement Specification is to define assumptions a
         <ol type="1">
             <li>The system shall be rendered on screen in less than 2 seconds.</li>
             <li>The system should enable the users to Comment a recipe in less than 10 seconds.</li>
-            <li>The system should enable the users to search a recipe in less than 10 seconds.<li>
-            <li>The System when Restarted, should not take more than 30 seconds to go back to live.<li>
+            <li>The system should enable the users to search a recipe in less than 10 seconds.</li>
+            <li>The System when Restarted, should not take more than 30 seconds to go back to live.</li>
         </ol>
     </li>
      <li> Compatability
@@ -89,15 +89,15 @@ The purpose of the Software Requirement Specification is to define assumptions a
         <ol type="1">
             <li>The system should not allow users to see personal identifiable information (PII) of other users.</li>
             <li>The system should not allow non-registered users to see the data.</li>
-            <li>The system shouldn’t allow user to upload the recipe. Such attempt should be reported to the administrator.<li>
+            <li>The system shouldn’t allow user to upload the recipe. Such attempt should be reported to the administrator.</li>
         </ol>
     </li>
     <li> Reliability
         <ol type="1">
             <li>The system should enable maintaining services with 0 downtime.</li>
             <li>The system should be able to scale up and scale down based on the load on the website.</li>
-            <li>The system should pass all the test cases(for that feature) at any point of development.<li>
-            <li>The system should be able to perform same when the simultaneous users are at least < 500.<li>
+            <li>The system should pass all the test cases(for that feature) at any point of development.</li>
+            <li>The system should be able to perform same when the simultaneous users are at least < 500.</li>
         </ol>
     </li>
     <li> User Friendly
