@@ -5,7 +5,6 @@ we are proposing “The Cook Book”, a modern recipe sharing website, which aim
 The website does not just make cooking easier, faster, and convenient but also gives users an opportunity to share their culinary experience with others.
 
 ## Essential Links
-* [WebPage](https://manchint.github.io/GVSU-CIS641-sunrisers_base/)
 * [Artifact](https://github.com/manchint/GVSU-CIS641-sunrisers_base/tree/master/artifacts)
 * [Meetings](https://github.com/manchint/GVSU-CIS641-sunrisers_base/tree/master/meetings)
 * [Documents](https://github.com/manchint/GVSU-CIS641-sunrisers_base/tree/master/docs)
