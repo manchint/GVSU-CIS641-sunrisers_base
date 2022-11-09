@@ -5,11 +5,11 @@ import java.net.UnknownHostException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.recepies.dao.UserDAO;
-import com.recepies.model.User;
-import com.recepies.model.UserLoginRequest;
-import com.recepies.model.UserModel;
-import com.recepies.model.UserRegisterRequest;
+import com.cookbook.dao.UserDAO;
+import com.cookbook.model.User;
+import com.cookbook.model.UserLoginRequest;
+import com.cookbook.model.UserModel;
+import com.cookbook.model.UserRegisterRequest;
 
 @Service 
 public class UserService {

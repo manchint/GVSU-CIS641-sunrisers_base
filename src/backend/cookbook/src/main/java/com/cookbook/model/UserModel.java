@@ -1,0 +1,14 @@
+package com.cookbook.model;
+
+import lombok.Data;
+
+
+@Data
+public class UserModel {
+	
+	private String firstName;
+	private String lastName;
+	private String userName;
+	private String profilePicturePath;
+
+}
