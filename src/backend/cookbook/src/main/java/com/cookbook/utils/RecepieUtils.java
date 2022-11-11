@@ -16,11 +16,11 @@ import javax.imageio.ImageIO;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.recepies.dao.HomePageDAO;
-import com.recepies.entities.User;
-import com.recepies.model.CommentModel;
-import com.recepies.model.RecepieModel;
-import com.recepies.model.RecepieRequest;
+import com.cookbook.dao.HomePageDAO;
+import com.cookbook.entities.User;
+import com.cookbook.model.CommentModel;
+import com.cookbook.model.RecepieModel;
+import com.cookbook.model.RecepieRequest;
 
 public class RecepieUtils {
 

@@ -1,4 +1,4 @@
-package com.recepies.dao;
+package com.cookbook.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,17 +9,17 @@ import java.util.stream.StreamSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.recepies.entities.Likes;
-import com.recepies.entities.Recepie;
-import com.recepies.entities.User;
-import com.recepies.model.CommentModel;
-import com.recepies.model.LikeModel;
-import com.recepies.model.RecepieModel;
-import com.recepies.repositories.CommentRepository;
-import com.recepies.repositories.LikesRepository;
-import com.recepies.repositories.RecepieRepository;
-import com.recepies.repositories.UserRepository;
-import com.recepies.utils.RecepieUtils;
+import com.cookbook.entities.Likes;
+import com.cookbook.entities.Recepie;
+import com.cookbook.entities.User;
+import com.cookbook.model.CommentModel;
+import com.cookbook.model.LikeModel;
+import com.cookbook.model.RecepieModel;
+import com.cookbook.repositories.CommentRepository;
+import com.cookbook.repositories.LikesRepository;
+import com.cookbook.repositories.RecepieRepository;
+import com.cookbook.repositories.UserRepository;
+import com.cookbook.utils.RecepieUtils;
 
 @Repository
 public class HomePageDAO {

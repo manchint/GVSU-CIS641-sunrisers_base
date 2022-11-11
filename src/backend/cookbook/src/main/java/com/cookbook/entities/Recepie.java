@@ -1,5 +1,5 @@
 package com.cookbook.entities;
-ipackage com.recepies.entities;
+
 
 import java.util.Date;
 import java.util.List;

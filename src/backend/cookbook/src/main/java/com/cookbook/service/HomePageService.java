@@ -1,4 +1,4 @@
-package com.recepies.service;
+package com.cookbook.service;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
@@ -11,16 +11,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.recepies.dao.HomePageDAO;
-import com.recepies.dao.UserDAO;
-import com.recepies.entities.Recepie;
-import com.recepies.entities.User;
-import com.recepies.model.CommentModel;
-import com.recepies.model.LikeModel;
-import com.recepies.model.RecepieModel;
-import com.recepies.model.RecepieRequest;
-import com.recepies.utils.ImageUtils;
-import com.recepies.utils.RecepieUtils;
+import com.cookbook.dao.HomePageDAO;
+import com.cookbook.dao.UserDAO;
+import com.cookbook.entities.Recepie;
+import com.cookbook.entities.User;
+import com.cookbook.model.CommentModel;
+import com.cookbook.model.LikeModel;
+import com.cookbook.model.RecepieModel;
+import com.cookbook.model.RecepieRequest;
+import com.cookbook.utils.ImageUtils;
+import com.cookbook.utils.RecepieUtils;
 
 @Service
 public class HomePageService {

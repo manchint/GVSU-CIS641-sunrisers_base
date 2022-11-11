@@ -1,4 +1,4 @@
-package com.recepies.utils;
+package com.cookbook.utils;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
@@ -11,8 +11,8 @@ import javax.imageio.ImageIO;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.recepies.model.RecepieRequest;
-import com.recepies.model.UserRegisterRequest;
+import com.cookbook.model.RecepieRequest;
+import com.cookbook.model.UserRegisterRequest;
 
 public class ImageUtils {
 

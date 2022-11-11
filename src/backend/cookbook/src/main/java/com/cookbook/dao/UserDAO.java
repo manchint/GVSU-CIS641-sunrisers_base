@@ -1,4 +1,4 @@
-package com.recepies.dao;
+package com.cookbook.dao;
 
 import java.net.UnknownHostException;
 
@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
-import com.recepies.entities.User;
-import com.recepies.model.UserLoginRequest;
-import com.recepies.model.UserModel;
-import com.recepies.model.UserRegisterRequest;
-import com.recepies.repositories.UserRepository;
-import com.recepies.utils.ImageUtils;
-import com.recepies.utils.UserUtil;
+import com.cookbook.entities.User;
+import com.cookbook.model.UserLoginRequest;
+import com.cookbook.model.UserModel;
+import com.cookbook.model.UserRegisterRequest;
+import com.cookbook.repositories.UserRepository;
+import com.cookbook.utils.ImageUtils;
+import com.cookbook.utils.UserUtil;
 
 @Repository
 public class UserDAO {

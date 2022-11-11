@@ -1,4 +1,4 @@
-package com.recepies.model;
+package com.cookbook.model;
 
 import java.util.Date;
 import java.util.List;

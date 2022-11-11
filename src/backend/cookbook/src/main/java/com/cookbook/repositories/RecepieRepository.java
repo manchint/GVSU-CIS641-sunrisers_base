@@ -6,8 +6,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.recepies.entities.Recepie;
-import com.recepies.model.RecepieModel;
+import com.cookbook.entities.Recepie;
+import com.cookbook.model.RecepieModel;
 
 @Repository
 public interface RecepieRepository extends CrudRepository<Recepie, Long> {

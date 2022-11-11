@@ -1,4 +1,4 @@
-package com.recepies.controller;
+package com.cookbook.controller;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.recepies.model.CommentModel;
-import com.recepies.model.LikeModel;
-import com.recepies.model.RecepieModel;
-import com.recepies.model.RecepieRequest;
-import com.recepies.model.SearchRequest;
-import com.recepies.service.HomePageService;
+import com.cookbook.model.CommentModel;
+import com.cookbook.model.LikeModel;
+import com.cookbook.model.RecepieModel;
+import com.cookbook.model.RecepieRequest;
+import com.cookbook.model.SearchRequest;
+import com.cookbook.service.HomePageService;
 
 @RestController
 @RequestMapping(path = "/api/recepies")
