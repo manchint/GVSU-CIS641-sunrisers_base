@@ -38,11 +38,18 @@ public class HomePageDAO {
 				.collect(Collectors.toList());
 		return recepiesList.stream().map(recepieEntity -> {
 			Likes l = likesRepository.findByLikedOnRecepieAndEmailOfLikedUser(recepieEntity.getRecepieId(), userEmail);
-			return RecepieUtils.buildRecepieModel(recepieEntity, l != null);
+			 RecepieModel buildRecepieModel = RecepieUtils.buildRecepieModel(recepieEntity, l != null);
+			 buildRecepieModel.setTotalLikes(getLikesCount(recepieEntity.getRecepieId()));
+			 return buildRecepieModel;
 
 		}).collect(Collectors.toList());
 
 	}
+	public int getLikesCount(Long recepieId) {
+		int allTheLikesCount = likesRepository.getAllTheLikesCount(recepieId);
+		return allTheLikesCount;
+	}
+
 
 	public Recepie publishRecepie(Recepie recepieEntity) {
 		Recepie SavedRecepie = recepieRepository.save(recepieEntity);
@@ -57,7 +64,7 @@ public class HomePageDAO {
 
 		if (optionalRecepie.isPresent()) {
 			Recepie recepie = optionalRecepie.get();
-			com.recepies.entities.Comment commentEntity = RecepieUtils.buildCommentEntity(commentModel, recepie);
+			com.cookbook.entities.Comment commentEntity = RecepieUtils.buildCommentEntity(commentModel, recepie);
 			recepie.getComments().add(commentEntity);
 			commentEntity.setRecepie(recepie);
 			Recepie updatedRecepie = recepieRepository.save(recepie);
@@ -74,8 +81,10 @@ public class HomePageDAO {
 
 	public RecepieModel likeARecepie(LikeModel like) {
 		Optional<Recepie> recepie = recepieRepository.findById(like.getLikedOnRecepie());
+		System.out.println("presence"+recepie.isPresent());
 		if (recepie.isPresent()) {
 			User user = userRepository.findByEmail(like.getEmailOfLikedUser());
+			System.out.println("user is"+user);
 			if (user != null) {
 				Likes likeinRepo = likesRepository.findByLikedOnRecepieAndEmailOfLikedUser(like.getLikedOnRecepie(),
 						like.getEmailOfLikedUser());

@@ -18,5 +18,6 @@ public class RecepieModel {
 	private String recepieURL;
 	private List<CommentModel> commentModels;
 	private boolean wheatherLikedByuser;
+	private int totalLikes;
 
 }

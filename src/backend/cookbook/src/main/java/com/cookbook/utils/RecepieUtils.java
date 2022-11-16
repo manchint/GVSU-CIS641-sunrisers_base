@@ -51,8 +51,8 @@ public class RecepieUtils {
 	 * }).collect(Collectors.toList()); }
 	 */
 
-	public static com.recepies.entities.Recepie buildRecepieEntity(String uri, RecepieRequest request) {
-		com.recepies.entities.Recepie recepie = new com.recepies.entities.Recepie();
+	public static com.cookbook.entities.Recepie buildRecepieEntity(String uri, RecepieRequest request) {
+		com.cookbook.entities.Recepie recepie = new com.cookbook.entities.Recepie();
 		recepie.setDateOfPublishing(new Date());
 		recepie.setDescription(request.getDescription());
 		recepie.setIngredients(request.getIngredients());
@@ -64,9 +64,9 @@ public class RecepieUtils {
 
 	}
 
-	public static com.recepies.model.RecepieModel buildRecepieModel(com.recepies.entities.Recepie recepieEntity,
+	public static com.cookbook.model.RecepieModel buildRecepieModel(com.cookbook.entities.Recepie recepieEntity,
 			boolean like) {
-		com.recepies.model.RecepieModel recepieModel = new com.recepies.model.RecepieModel();
+		com.cookbook.model.RecepieModel recepieModel = new com.cookbook.model.RecepieModel();
 		recepieModel.setRecepieId(recepieEntity.getRecepieId());
 		recepieModel.setDateOfPublishing(new Date());
 		recepieModel.setDescription(recepieEntity.getDescription());
@@ -82,7 +82,7 @@ public class RecepieUtils {
 
 	}
 
-	public static com.recepies.model.CommentModel buildCommentModel(com.recepies.entities.Comment commentEntity) {
+	public static com.cookbook.model.CommentModel buildCommentModel(com.cookbook.entities.Comment commentEntity) {
 		CommentModel commentModel = new CommentModel();
 		commentModel.setCommentedContent(commentEntity.getCommentedContent());
 		commentModel.setPostedBy(commentEntity.getPostedBy());
@@ -90,9 +90,9 @@ public class RecepieUtils {
 		return commentModel;
 	}
 
-	public static com.recepies.entities.Comment buildCommentEntity(CommentModel commentModel,
-			com.recepies.entities.Recepie recepie) {
-		com.recepies.entities.Comment commentEntity = new com.recepies.entities.Comment();
+	public static com.cookbook.entities.Comment buildCommentEntity(CommentModel commentModel,
+			com.cookbook.entities.Recepie recepie) {
+		com.cookbook.entities.Comment commentEntity = new com.cookbook.entities.Comment();
 		commentEntity.setCommentedContent(commentModel.getCommentedContent());
 		commentEntity.setPostedBy(commentModel.getPostedBy());
 		commentEntity.setRecepie(recepie);

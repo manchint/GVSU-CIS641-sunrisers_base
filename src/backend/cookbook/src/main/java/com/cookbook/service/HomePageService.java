@@ -42,7 +42,7 @@ public class HomePageService {
 
 		String nameOftheImageInFileSystem = ImageUtils.saveAnImage(request, filePath);
 		String uri = ImageUtils.buildAnURI(nameOftheImageInFileSystem, port);
-		com.recepies.entities.Recepie recepieEntity = RecepieUtils.buildRecepieEntity(uri, request);
+		com.cookbook.entities.Recepie recepieEntity = RecepieUtils.buildRecepieEntity(uri, request);
 		User user = userDAO.getUser(request.getPublishedBy());
 		return RecepieUtils.buildRecepieModel(homePageDAO.publishRecepie(recepieEntity), false);
 
@@ -56,7 +56,7 @@ public class HomePageService {
 	}
 
 	public List<CommentModel> commentOnaRecepie(CommentModel commentModel) {
-		// com.recepies.entities.Comment commentEntity=
+		// com.cookbook.entities.Comment commentEntity=
 		// RecepieUtils.buildCommentEntity(comment);
 		System.out.println("entered service");
 

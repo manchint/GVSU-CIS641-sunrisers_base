@@ -1,10 +1,10 @@
-package com.cookbook;
+package com.recepies;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CookbookApplicationTests {
+class RecipiesProjectApplicationTests {
 
 	@Test
 	void contextLoads() {
