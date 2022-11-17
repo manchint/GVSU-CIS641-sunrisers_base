@@ -20,5 +20,31 @@ public class Comment {
 	@ManyToOne
 	@JoinColumn(name = "rId")
 	private Recepie recepie;
+	public void setRecepie(Recepie recepie2) {
+		// TODO Auto-generated method stub
+		this.recepie = recepie2;
+	}
+	public String getCommentedContent() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Long getCommentId() {
+		return commentId;
+	}
+	public void setCommentId(Long commentId) {
+		this.commentId = commentId;
+	}
+	public String getPostedBy() {
+		return postedBy;
+	}
+	public void setPostedBy(String postedBy) {
+		this.postedBy = postedBy;
+	}
+	public Recepie getRecepie() {
+		return recepie;
+	}
+	public void setCommentedContent(String commentedContent) {
+		this.commentedContent = commentedContent;
+	}
 
 }
