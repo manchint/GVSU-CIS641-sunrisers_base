@@ -40,8 +40,11 @@ public String registerAnUser(UserRegisterRequest request) throws UnknownHostExce
 	user.setEmail(request.getEmail());
 	user.setFirstName(request.getFirstName());
 	user.setLastName(request.getLastName());
-	String fileName = ImageUtils.saveAnImage(request, filePath);
-	String uri=ImageUtils.buildAnURI(fileName, port);
+	String uri = null;
+	if(filePath != null || filePath != "") {
+		String fileName = ImageUtils.saveAnImage(request, filePath);
+		uri=ImageUtils.buildAnURI(fileName, port);
+	}
 	user.setProfilePicturePath(uri);
 	user.setUserName(request.getUserName());
 	user.setPassword(request.getPassword());

@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cookbook</groupId>
-	<artifactId>RecipiesProject</artifactId>
+	<artifactId>Cookbook</artifactId>
 	<version>INITIAL-0.1</version>
-	<name>RecipiesProject</name>
-	<description>recipies publishing</description>
+	<name>Cookbook</name>
+	<description>Cookbook publishing</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
