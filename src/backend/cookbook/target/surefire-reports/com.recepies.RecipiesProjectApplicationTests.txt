@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: com.recepies.RecipiesProjectApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.11 s <<< FAILURE! - in com.recepies.RecipiesProjectApplicationTests
-com.recepies.RecipiesProjectApplicationTests  Time elapsed: 0.108 s  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.099 s <<< FAILURE! - in com.recepies.RecipiesProjectApplicationTests
+com.recepies.RecipiesProjectApplicationTests  Time elapsed: 0.098 s  <<< ERROR!
 java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
 

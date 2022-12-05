@@ -17,6 +17,7 @@ public class RecepieModel {
 	private String publishedBy;
 	private String recepieURL;
 	private List<CommentModel> commentModels;
+	private List<String> usersLiked;
 	private boolean wheatherLikedByuser;
 	private int totalLikes;
 	public void setTotalLikes(int likesCount) {
@@ -85,6 +86,11 @@ public class RecepieModel {
 	}
 	public int getTotalLikes() {
 		return totalLikes;
+	}
+	public void setUsersLiked(int totalLikes) {
+		this.totalLikes = totalLikes;
+		// TODO Auto-generated method stub
+		
 	}
 
 }

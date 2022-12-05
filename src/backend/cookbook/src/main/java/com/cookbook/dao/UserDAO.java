@@ -23,43 +23,40 @@ public class UserDAO {
 	private String filePath;
 	@Value("${server.port}")
 	private String port;
-	
-	
 
 	public User getUser(String email) {
 		User user = userRepository.findByEmail(email);
 		return user;
 	}
 
-public String registerAnUser(UserRegisterRequest request) throws UnknownHostException {
-	User existingUser=userRepository.findByEmail(request.getEmail());
-	if(existingUser!=null) {
-		throw new RuntimeException("user already exists");
+	public String registerAnUser(UserRegisterRequest request) throws UnknownHostException {
+		User existingUser = userRepository.findByEmail(request.getEmail());
+		if (existingUser != null) {
+			throw new RuntimeException("user already exists");
+		}
+		User user = new User();
+		user.setEmail(request.getEmail());
+		user.setFirstName(request.getFirstName());
+		user.setLastName(request.getLastName());
+		String uri = null;
+		if (filePath != null || filePath != "") {
+			String fileName = ImageUtils.saveAnImage(request, filePath);
+			uri = ImageUtils.buildAnURI(fileName, port);
+		}
+		user.setProfilePicturePath(uri);
+		user.setPassword(request.getPassword());
+		User registredUser = userRepository.save(user);
+		return "registration successful";
 	}
-	User user=new User();
-	user.setEmail(request.getEmail());
-	user.setFirstName(request.getFirstName());
-	user.setLastName(request.getLastName());
-	String uri = null;
-	if(filePath != null || filePath != "") {
-		String fileName = ImageUtils.saveAnImage(request, filePath);
-		uri=ImageUtils.buildAnURI(fileName, port);
-	}
-	user.setProfilePicturePath(uri);
-	user.setUserName(request.getUserName());
-	user.setPassword(request.getPassword());
-	User registredUser = userRepository.save(user);
-	return "registration successful";
-}
 
-public com.cookbook.model.User signInAnUser(UserLoginRequest request) {
+	public com.cookbook.model.User signInAnUser(UserLoginRequest request) {
 
-	User user=userRepository.findByEmail(request.getEmail());
-	if(user.getPassword().equals(request.getPassword())) {
-		return UserUtil.buildAnUserModel(user);
+		User user = userRepository.findByEmail(request.getEmail());
+		if (user.getPassword().equals(request.getPassword())) {
+			return UserUtil.buildAnUserModel(user);
+		}
+
+		return null;
 	}
-	
-	return null;
-}
 
 }

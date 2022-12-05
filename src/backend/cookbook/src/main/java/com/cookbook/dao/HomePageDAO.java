@@ -120,5 +120,16 @@ public class HomePageDAO {
 		}).collect(Collectors.toList());
 
 	}
+	public List<RecepieModel> searchARecepieById(Long recepieId) {
+		System.out.println("Id of Recepie is" + recepieId);
+		Optional<Recepie> allFetchedRecepies = recepieRepository.findById(recepieId );
+		if(allFetchedRecepies.isEmpty()) {
+			return null;
+		}
+		return allFetchedRecepies.stream().map(entity -> {
+			return RecepieUtils.buildRecepieModel(entity, false);
+		}).collect(Collectors.toList());
+
+	}
 
 }

@@ -75,6 +75,7 @@ public class RecepieUtils {
 		recepieModel.setPublishedBy(recepieEntity.getPublishedBy());
 		recepieModel.setProcedureOfTheRecepie(recepieEntity.getProcedureOfTheRecepie());
 		recepieModel.setRecepieURL(recepieEntity.getRecepieURL());
+		recepieModel.setUsersLiked(0);
 		recepieModel.setCommentModels(recepieEntity.getComments() != null ? recepieEntity.getComments().stream()
 				.map(x -> RecepieUtils.buildCommentModel(x)).collect(Collectors.toList()) : new ArrayList<>());
 		recepieModel.setWheatherLikedByuser(like);

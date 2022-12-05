@@ -31,20 +31,21 @@ public class HomePageController {
 	HomePageService homePageService;
 	
 
-	@GetMapping(path = { "/{userEmail}", "/home/{userEmail}" })
-	public List<RecepieModel> getAllRecepies(@PathVariable final String userEmail) {
-		System.out.println("userEmail is "+userEmail);
-		return homePageService.getAllRecepies(userEmail);
+	@GetMapping(path = { "/home/recepies/" })
+	public List<RecepieModel> getAllRecepies() {
+		return homePageService.getAllRecepies(null);
 	}
 	@PostMapping(path = "/home/search/" )
 	public List<RecepieModel> searchARecepie(@RequestBody  SearchRequest searchRequest) {
 		System.out.println("key word of the recepie is "+searchRequest.getKeyword());
 		return homePageService.searchARecepie(searchRequest.getKeyword());
 	}
-	@GetMapping(path =  "/")
-	public List<RecepieModel> getAllRecepiesWithNoEmail() {
-		return homePageService.getAllRecepies(null);
+	@PostMapping(path = "/home/search/{recepieId}" )
+	public List<RecepieModel> searchARecepieById(@PathVariable  Long recepieId) {
+		System.out.println("id  of the recepie is "+recepieId);
+		return homePageService.searchARecepieById(recepieId);
 	}
+
 
 	@PostMapping(path = { "/" }, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public RecepieModel publishARecipie(@ModelAttribute RecepieRequest recepieRequest) {
@@ -52,7 +53,6 @@ public class HomePageController {
 		try {
 			return homePageService.publishARecepie(recepieRequest);
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return new RecepieModel();

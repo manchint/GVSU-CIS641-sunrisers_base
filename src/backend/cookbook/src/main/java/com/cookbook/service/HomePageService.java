@@ -76,5 +76,7 @@ public class HomePageService {
 
 	public List<RecepieModel> searchARecepie(String keyword) {
 		return homePageDAO.searchARecepie(keyword);
+	}public List<RecepieModel> searchARecepieById(Long keyword) {
+		return homePageDAO.searchARecepieById(keyword);
 	}
 }
