@@ -1,0 +1,33 @@
+.search-recipe{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+    position: relative;
+}
+.search-recipe input,
+.search-recipe input:focus,
+.search-recipe input:focus-within{
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: none;
+    border: 1px solid #ced4da;
+}
+.icon-search{
+    background-image: url('../Assets/search.svg');
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }

@@ -1,0 +1,27 @@
+.bg-light{
+    background-color: #fff !important;
+    /* background-color: #e9f0f1!important; */
+}
+.nav-item{
+    list-style: none;
+    color: #000 !important;
+    cursor: pointer;
+}
+h3.navbar-brand{
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 32px;
+    cursor: pointer;
+}
+.collapse.navbar-collapse{
+    position: absolute;
+    right: 0;
+}
+.icon-user{
+    background-image: url('../Assets/user-profile.svg');
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
