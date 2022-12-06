@@ -8,10 +8,10 @@
     },
     reducers: {
       setUserDetails: (state, action) => {
-        state.userName = action.payload;
+        state.user = action.payload;
       },
       logOut : (state, action) => {
-        state.userName = action.payload;
+        state.user = action.payload;
       }
     },
   });
