@@ -22,4 +22,4 @@
 - Create a dummy folder for sql backend for logging purpose in the path GVSU-CIS641-sunrisers_base/src/
 - Open GVSU-CIS641-sunrisers_base/src/backend/cookbook/src/main/resources/application.properties and replace with the configuration of the database created and filePath with the sql dummy folder path created.
 - Right click on Project and Run as Spring Boot App
-- To access all the API’s use the following URL: http://localhost:8081/swagger-ui/index.htmlPlaceholder for source code
+- To access all the API’s use the following URL: http://localhost:8081/swagger-ui/index.html
