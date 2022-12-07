@@ -3,9 +3,12 @@ import './PublishRecipe.css';
 
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
+import { addReceipe } from '../redux/receipe';
+import { useSelector } from 'react-redux';
 function PublishRecipe() {
     let navigate = useNavigate();
     const dispatch = useDispatch();
+    const list = useSelector(state =>  state.receipe.list)
     const [receipeDetails, setReceipeDetails] = useState({
         'name' : '',
         'publishedBy': '',
@@ -13,7 +16,9 @@ function PublishRecipe() {
         'ingredients' : '',
         'calories' : '',
         'procedureOfTheRecepie' : '',
-        'imageOfTheRecepie' : null
+        'imageOfTheRecepie' : null,
+        'id' : '',
+        'likes' : 0
     });
     const [srcImage, setSrcImage] = useState('');
     const triggerBrowseFile = (e) => {
@@ -25,6 +30,8 @@ function PublishRecipe() {
     const publishReceipe = () => {
         //dispatch(setUserDetails(user));
         navigate("/")
+        setReceipeDetails({...receipeDetails, id: list.length})
+        dispatch(addReceipe(receipeDetails));
         
         //     const data = axios.post('http://localhost:8081/api/recepies', receipeDetails
         //     ).then(res => {

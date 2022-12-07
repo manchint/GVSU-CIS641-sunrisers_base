@@ -12,7 +12,6 @@ function Signup() {
         'firstName': '',
         'password': '',
         'profPicture': '',
-        'userName' : 'werw',
         'email' : '',
         'profPicture' : null
     });

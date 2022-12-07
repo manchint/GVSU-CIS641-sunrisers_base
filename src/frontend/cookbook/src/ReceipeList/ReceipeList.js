@@ -10,9 +10,6 @@ function ReceipeList(props) {
     let navigate = useNavigate();
     const dispatch = useDispatch()
     const list = useSelector(state =>  state.receipe.list)
-    
-    const searchText = useSelector(state =>  state.search.text)
-    const state = useSelector(state =>  state)
 
     const [receipesList, setReceipesList] = useState([])
     useEffect(() => {
@@ -20,6 +17,7 @@ function ReceipeList(props) {
         // const data = axios.get('http://localhost:8081/api/recepies').then(res => setReceipeList(res.data))
 
         //FAKE
+        if(list.length == 0) {
         dispatch(setReceipeList([
             { id:1, itemName: 'Chicken Tikka Masala', likes: 231},
             { id:2, itemName: 'Potato Fry', likes : 32},
@@ -27,6 +25,7 @@ function ReceipeList(props) {
             { id:4, itemName: 'Biryani', likes : 543},
             { id:5, itemName: 'Frozen Ice Cream', likes : 532},   
           ]))
+        }
     }, [])
     useEffect(() => {
         setReceipesList(list);
@@ -39,7 +38,7 @@ function ReceipeList(props) {
             {receipesList.length != 0 ? 
                 <>{
                     receipesList.map((item) => {
-                    return (<CardComponent name={item.itemName} id={item.id} likes={item.likes}/> )
+                    return (<CardComponent id={item.id} /> )
                 })
                 }</>
              :

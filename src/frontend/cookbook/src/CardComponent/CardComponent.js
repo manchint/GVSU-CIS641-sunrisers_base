@@ -7,11 +7,11 @@ import item2 from '../../src/Assets/images/item2.webp';
 import item3 from '../../src/Assets/images/item3.jpeg';
 import item4 from '../../src/Assets/images/item4.jpeg';
 import item5 from '../../src/Assets/images/item5.jpeg';
-
+import item6 from '../../src/Assets/images/item5.jpeg';
 function CardComponent(props) {
     let navigate = useNavigate();
 
-    const images = [item1, item2, item3, item4, item5]
+    const images = [item1, item2, item3, item4, item5, item6]
     return (
         <div className="card" onClick={() => navigate('/viewdetails', {state:{id:props.id}})}>
                 <img src= {images[props.id-1]}/>

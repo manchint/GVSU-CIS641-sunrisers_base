@@ -22,7 +22,7 @@ function Navbar() {
                     <img id = 'output' src = {user.profPicture}/> 
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">                    
-                       {user.userName == undefined ? 
+                       {user.firstName == undefined ? 
                         <>
                                 <li className="nav-item mr-20 ml-20">
                                     <span onClick={() => navigateTo('login')} >Login</span>
@@ -34,7 +34,7 @@ function Navbar() {
                             :
                             <>
                                 <li className="nav-item mr-20 ml-20">
-                                    <span >{'Hello ' + user.userName}</span>
+                                    <span >{'Hello ' + user.firstName}</span>
                                 </li>
                                 <li className="nav-item mr-20 ml-20" onClick={() => dispatch(logOut({}))}>
                                     <i className='icon-user' ></i> 
