@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './PublishRecipe.css';
-
+import TagsInput from './TagsInput';
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { addReceipe } from '../redux/receipe';
@@ -20,6 +20,7 @@ function PublishRecipe() {
         'id' : '',
         'likes' : 0
     });
+    const [tags, setTags] = React.useState([]);
     const [srcImage, setSrcImage] = useState('');
     const triggerBrowseFile = (e) => {
         document.querySelector('.browse-file').click();
@@ -28,9 +29,8 @@ function PublishRecipe() {
         setReceipeDetails({...receipeDetails, imageOfTheRecepie: e.target.files[0].name})
     }
     const publishReceipe = () => {
-        //dispatch(setUserDetails(user));
         navigate("/")
-        setReceipeDetails({...receipeDetails, id: list.length})
+        setReceipeDetails({...receipeDetails, id: list.length, ingredients : tags.toString()})
         dispatch(addReceipe(receipeDetails));
         
         //     const data = axios.post('http://localhost:8081/api/recepies', receipeDetails
@@ -66,9 +66,7 @@ function PublishRecipe() {
                 </div>
                 <div className="mb-3">
                     <label for="exampleInputCPassword" className="form-label">Ingredients</label>
-                    <textarea type="text" row="5" className="form-control" id="exampleInputCIngredients" 
-                        onChange={(e) => setReceipeDetails({...receipeDetails, ingredients: e.target.value})}
-                        value = {receipeDetails.ingredients}/>                       
+                    <TagsInput tags={[]} selectedTags={setTags}/>
                 </div>
                 <div className="mb-3">
                     <label for="exampleInputCPassword" className="form-label">Procedure</label>

@@ -17,7 +17,7 @@ function CardComponent(props) {
                 <img src= {images[props.id-1]}/>
                 <div className="card-body">
                     <h5 className="card-title">{props.name}</h5>
-                    <div><i className='icon-like'></i> <span className='like-count'>231</span></div>
+                    <div><i className='icon-like'></i> <span className='like-count'>{props.likes}</span></div>
                 </div>                               
         </div>
     )

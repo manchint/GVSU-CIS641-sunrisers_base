@@ -4,7 +4,6 @@ import CardComponent from '../CardComponent/CardComponent';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setSearchText } from '../redux/search.js';
 import { setReceipeList } from '../redux/receipe';
 function ReceipeList(props) {
     let navigate = useNavigate();
@@ -38,7 +37,7 @@ function ReceipeList(props) {
             {receipesList.length != 0 ? 
                 <>{
                     receipesList.map((item) => {
-                    return (<CardComponent id={item.id} /> )
+                    return (<CardComponent id={item.id} name={item.name} likes={item.likes}/> )
                 })
                 }</>
              :
