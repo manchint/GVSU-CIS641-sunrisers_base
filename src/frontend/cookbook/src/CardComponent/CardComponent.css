@@ -5,14 +5,14 @@
     border-radius: 10px;
     cursor: pointer;
 }
-.card .item-img{
+.card{
     height: 150px;
     width: 100%;
     border-radius: 10px;
-    background-image: url('../chicke-tikka.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .checked {
     color: orange;
 }

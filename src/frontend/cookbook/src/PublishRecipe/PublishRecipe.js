@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import './PublishRecipe.css';
-
+import TagsInput from './TagsInput';
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
+import { addReceipe } from '../redux/receipe';
+import { useSelector } from 'react-redux';
 function PublishRecipe() {
     let navigate = useNavigate();
     const dispatch = useDispatch();
+    const list = useSelector(state =>  state.receipe.list)
     const [receipeDetails, setReceipeDetails] = useState({
         'name' : '',
         'publishedBy': '',
@@ -13,8 +16,11 @@ function PublishRecipe() {
         'ingredients' : '',
         'calories' : '',
         'procedureOfTheRecepie' : '',
-        'imageOfTheRecepie' : null
+        'imageOfTheRecepie' : null,
+        'id' : '',
+        'likes' : 0
     });
+    const [tags, setTags] = React.useState([]);
     const [srcImage, setSrcImage] = useState('');
     const triggerBrowseFile = (e) => {
         document.querySelector('.browse-file').click();
@@ -23,8 +29,9 @@ function PublishRecipe() {
         setReceipeDetails({...receipeDetails, imageOfTheRecepie: e.target.files[0].name})
     }
     const publishReceipe = () => {
-        //dispatch(setUserDetails(user));
         navigate("/")
+        setReceipeDetails({...receipeDetails, id: list.length, ingredients : tags.toString()})
+        dispatch(addReceipe(receipeDetails));
         
         //     const data = axios.post('http://localhost:8081/api/recepies', receipeDetails
         //     ).then(res => {
@@ -59,9 +66,7 @@ function PublishRecipe() {
                 </div>
                 <div className="mb-3">
                     <label for="exampleInputCPassword" className="form-label">Ingredients</label>
-                    <textarea type="text" row="5" className="form-control" id="exampleInputCIngredients" 
-                        onChange={(e) => setReceipeDetails({...receipeDetails, ingredients: e.target.value})}
-                        value = {receipeDetails.ingredients}/>                       
+                    <TagsInput tags={[]} selectedTags={setTags}/>
                 </div>
                 <div className="mb-3">
                     <label for="exampleInputCPassword" className="form-label">Procedure</label>

@@ -1,16 +1,33 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './DetailsView.css';
 
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 import item1 from '../../src/Assets/images/item1.jpeg';
 import {useLocation} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setComments } from '../redux/comments';
 function DetailsView() {
     const location = useLocation();
-    console.log(location.state.id)
+    const list = useSelector(state =>  state.receipe.list)
+    const dispatch = useDispatch()
+    const comments = useSelector(state =>  state.comments.comments)
+    const user = useSelector(state =>  state.user.user)
+    const [comm, setComm] = useState([])
+    const [msg, setMsg] = useState('')
+    const [detail, setDetails] = useState({});
     useEffect(() => {
         //REAL
         // const data = axios.get('http://localhost:8081/api/recepies').then(res => setReceipeList(res.data))
+        setComm(comments);
+        console.log(location.state.id)
+        let searchItem = list.filter((item) => item.id == location.state.id)
+        searchItem.ingredients = searchItem.ingredients.split(",")
+        setDetails(searchItem);
     }, [])
+    useEffect(() => {
+        setComm(comments);
+    }, [comments])
   return (
       <>
     <div className='recipe-details mt-40'>
@@ -18,40 +35,26 @@ function DetailsView() {
             <img src= {item1}/>
         </div>
         <div className='details-block'>
-            <h3>Chicken Tikka Masala</h3>
-            <div><i className='icon-like'></i> <span className='like-count'>231</span></div>
+            <h3>{detail.name}</h3>
+            <button onClick={() => navigate("/publish", {state:{id:props.id}})}>EDIT</button>
+            <div><i className='icon-like'></i> <span className='like-count'>{detail.likes}</span></div>
             <hr />
             <div className='mt-10'>
-                <div className='d-flex'><div className='sub-header'>User Name </div><div className='sub-value'>Ashu Toast</div></div>
-                <div className='d-flex'><div className='sub-header'>Calories </div><div className='sub-value'>321 Kcal</div></div>
+                <div className='d-flex'><div className='sub-header'>User Name </div><div className='sub-value'>{detail.publishedBy}</div></div>
+                <div className='d-flex'><div className='sub-header'>Calories </div><div className='sub-value'>{detail.calories}</div></div>
             </div>
             <hr />
             <div className='mt-10'>
                 <div className='sub-header'>Ingredients</div>
-                {/* <p className='mt-10'>
-                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently<br/>
-                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-                </p> */}
                 <ul className='list'>
-                    <li>Salt</li>
-                    <li>Butter</li>
-                    <li>Pepper 1Tbsp</li>
-                    <li>Curd 1cup</li>
-                    <li>Mirchi</li>
-                    <li>Chilli Powder</li>
-                    <li>Ginger</li>
-                    <li>Cloves</li>
-                    <li>Cinnamon</li>
-                    <li>Turmaric</li>
-                    <li>Curry Leaves</li>
+                {detail.map((ingredient) => {return (<li>{ingredient}</li>)})}
                 </ul>
             </div>
             <hr />
             <div className='mt-10'>
                 <div className='sub-header'>Procedure</div>
                 <p className='mt-10'>
-                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently<br/>
-                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                    {detail.procedureOfTheRecepie}
                 </p>
             </div>
         </div>
@@ -59,13 +62,9 @@ function DetailsView() {
     <div>
         <h3>Comments</h3>
         <div className='mt-10'>
-            <img /><div className='d-flex ml-20'><div className='sub-value'>Ashu Toast : Great taste</div></div>
-            <img /><div className='d-flex ml-20'><div className='sub-value'>Ashu Toast : Great taste</div></div>
-            <img /><div className='d-flex ml-20'><div className='sub-value'>Ashu Toast : Great taste</div></div>
-            <img /><div className='d-flex ml-20'><div className='sub-value'>Ashu Toast : Great taste</div></div>
-            <img /><div className='d-flex ml-20'><div className='sub-value'>Ashu Toast : Great taste</div></div>
-            <img /><div className='d-flex ml-20'><div className='sub-value'>Ashu Toast : Great taste</div></div>
-
+            {comm.map((comment) => { return (<div className='d-flex ml-20'><div className='sub-value'>{comment.name + ' : ' + comment.msg}</div></div>)})}
+            <div className='d-flex ml-20'><input type = 'text' placeholder='Enter your comments....' onChange={(e) => setMsg(e.target.value)}/>
+                <button onClick={() => dispatch(setComments({name: user.firstName, msg : msg}))}>Comment</button></div>
         </div>
     </div>
     </>
