@@ -137,3 +137,22 @@ This section provides a comprehensive understanding of the system’s underlying
 | NFR25 | The system shall provide users with an aesthetic and minimal design experience. |
 | NFR26 | The system shall be accessible easily to users of any age group. |
 | NFR27 | The system shall be supported by major web browsers. |
+
+# Change Management Plan
+The purpose of the change management plan is to help manage the change process and minimize the impact a change can have on the application and the stakeholders involved thus reducing the risk and resistance while improving communication and long-term adoption of the new system or process. This section provides the change management plan for "The Cook Book" system. The main focus is to provide users with training on the system, integrate it into our organization's ecosystem, and continuously monitor the system.
+
+### Why "The Cook Book"?
+Cooking not only helps us to understand the world's cultures, customs, and flavors but also helps us learn life skills like eating healthy and budgeting our money. However, with a busy schedule searching for the right recipes of choice based on the ingredients available in the kitchen is a time-consuming job. Hence we came up with the idea to develop "The Cook Book" a modern recipe-sharing website, which aims to provide users with a variety of food recipes from healthy to various gourmet, super quick to fine culinary dishes with the ingredients available to the user.
+
+### Training Strategy:
+As our primary aim is to make our application reach Students at GVSU, we came up with a strategy, to begin with, advertising our application over the Television all over the campus and through College radio which gives us better reach with less or no expense. We will also display QR codes in the television advertisements which on scanning takes them to a portal where they can find more details on how to make use of this application. In addition to that, we will also prepare posters that include the QR code of the website and place them all over the campus.
+
+On the website, we would have a demo video for the user to get familiar with the featues of the system.
+
+We will also request the faculty of the GVSU related to Food and Culinary Science to support our application by suggesting it to the students enrolled in the related courses.
+
+### Integrating within GVSU Software:
+Since GVSU already has an attractive and robust website, we can easily integrate our "The Cook Book" application with it. Instead of merging it into the GVSU system, we can add our application link as an external like on the GVSU system by keeping our application servers and databases separate.
+
+### Continuous Monitoring and Support:
+We will have a maintainace team working on the issues raised and fix the bugs.We will continuously monitor the systems's performance using Grafana. Also, we will be working on new features for continuous improvements of the system based on ongoing trends and user feedback.
