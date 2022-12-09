@@ -87,3 +87,53 @@ This section provides a comprehensive understanding of the system’s underlying
 | -------------| ---------- | 
 | FR47 | The system shall allow the logged-in user to log out. |
 | FR48 | The system shall redirect to the home page after the registered user logs out successfully. |
+
+
+## Non-Functional Requirements
+
+### Availability and Reliability
+| ID | Requirement |
+| -------------| ---------- |
+| NFR1 | The system should have an availability of 99.999%.|
+| NFR2 | The system should have a failover server in case of failure.|
+| NFR3 | The system shall take database backups every 3 hours to allow recovery.|
+| NFR4 | The system shall support a recovery time objective of 3 hours.|
+| NFR5 | The system shall provide customer support for solving issues faced by the user while accessing the website.|
+
+### Accessibility
+| ID | Requirement |
+| -------------| ---------- |
+| NFR6 | The system shall be rendered on screen in less than 1 second. |
+| NFR7 | The system should retrieve the recipes in less than 2 seconds on screen. |
+| NFR8 | The system should persist/update/delete a comment for a recipe in less than 0.5 seconds. |
+| NFR9 | The system should persist an uploaded recipe in less than 1 second. |
+| NFR10 | The system should update the like count in less than 2 seconds on the like/unlike action. |
+
+### Security
+| ID | Requirement |
+| -------------| ---------- |
+| NFR11 | The system should not allow users to see the personal identifiable information (PII) of other users. |
+| NFR12 | The system should not allow non-logged-in users to upload recipes. |
+| NFR13 | The system should not allow non-logged-in users to add/update/delete review comments on a recipe. |
+| NFR14 | The system should not allow logged-in users to update/delete review comments of other registered users on a recipe. |
+| NFR15 | The system shall record unsuccessful user login attempts and audit. |
+| NFR16 | The system’s back-end servers shall only be accessible to authenticated administrators. |
+| NFR17 | The system shall follow secure coding practices. | 
+
+### Performance
+| ID | Requirement |
+| -------------| ---------- |
+| NFR18 | The system shall handle a maximum number of 20K users at a time.|
+| NFR19 | The system shall scale up to 30k users and scale down based on the load on the website.|
+| NFR20 | The system should process the login and signup request in less than 2 seconds.|
+| NFR21 | The system shall limit the size of the recipe images for performance optimization. |
+| NFR22 | The system's database should be able to store a minimum of 30k recipes.|
+
+### Usability
+| ID | Requirement |
+| -------------| ---------- |
+| NFR23 | The system shall be user-friendly and in an easily understandable format or readable format. |
+| NFR24 | The system shall consist of a standard visual experience for all users. |
+| NFR25 | The system shall provide users with an aesthetic and minimal design experience. |
+| NFR26 | The system shall be accessible easily to users of any age group. |
+| NFR27 | The system shall be supported by major web browsers. |
