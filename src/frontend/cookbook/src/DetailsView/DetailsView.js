@@ -4,11 +4,12 @@ import './DetailsView.css';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import item1 from '../../src/Assets/images/item1.jpeg';
-import {useLocation} from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setComments } from '../redux/comments';
 function DetailsView() {
     const location = useLocation();
+    let navigate = useNavigate();
     const list = useSelector(state =>  state.receipe.list)
     const dispatch = useDispatch()
     const comments = useSelector(state =>  state.comments.comments)
@@ -16,14 +17,9 @@ function DetailsView() {
     const [comm, setComm] = useState([])
     const [msg, setMsg] = useState('')
     const [detail, setDetails] = useState({});
+    const [ingredients, setIngredient] = useState([])
     useEffect(() => {
-        //REAL
-        // const data = axios.get('http://localhost:8081/api/recepies').then(res => setReceipeList(res.data))
-        setComm(comments);
-        console.log(location.state.id)
-        let searchItem = list.filter((item) => item.id == location.state.id)
-        searchItem.ingredients = searchItem.ingredients.split(",")
-        setDetails(searchItem);
+        const data = axios.get('http://localhost:8081/api/recepies').then(res => setReceipeList(res.data))
     }, [])
     useEffect(() => {
         setComm(comments);
@@ -36,7 +32,7 @@ function DetailsView() {
         </div>
         <div className='details-block'>
             <h3>{detail.name}</h3>
-            <button onClick={() => navigate("/publish", {state:{id:props.id}})}>EDIT</button>
+            <button onClick={() => navigate("/publish", {state:{id:location.state.id}})}>EDIT</button>
             <div><i className='icon-like'></i> <span className='like-count'>{detail.likes}</span></div>
             <hr />
             <div className='mt-10'>
@@ -47,7 +43,7 @@ function DetailsView() {
             <div className='mt-10'>
                 <div className='sub-header'>Ingredients</div>
                 <ul className='list'>
-                {detail.map((ingredient) => {return (<li>{ingredient}</li>)})}
+                {ingredients.map((ingredient) => {return (<li>{ingredient}</li>)})}
                 </ul>
             </div>
             <hr />

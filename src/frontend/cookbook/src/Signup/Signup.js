@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useSyncExternalStore } from 'react';
 import './Signup.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
@@ -16,23 +16,26 @@ function Signup() {
         'profPicture' : null
     });
     const [confirmPassword, setConfirmPassword] = useState('');
-
+    const [errmsgs, setErrMsgs] = useState({
+        lastName: '',
+        firstName: '',
+        password: ''
+    })
     const signUpUser = () => {
-        dispatch(setUserDetails(user));
-        navigate("/");
+        
 
-        //REAL
-        // if(user.password != confirmPassword) {
-        //     alert("Passwords donot match")
-        // } else {
-        //     
-        //     const data = axios.post('http://localhost:8081/api/user/register', user
-        //     ).then(res => {
-        //         console.log(res)
-        //         dispatch(setUserDetails(user));
-        //         navigate("/")
-        //     })
-        //}
+        //API
+        if(user.password != confirmPassword) {
+            alert("Passwords donot match")
+        } else {
+            
+            const data = axios.post('http://localhost:8081/api/user/register', user
+            ).then(res => {
+                console.log(res)
+                dispatch(setUserDetails(user));
+                navigate("/")
+            })
+        }
 
     }
     const triggerBrowseFile = (e) => {
@@ -61,14 +64,30 @@ function Signup() {
                 <div className="mb-3">
                     <label for="exampleInputFirstName" className="form-label">First Name</label>
                     <input type="text" className="form-control" id="exampleInputFirstName" 
-                        onChange={(e) => setUser({...user, firstName: e.target.value})}
+                        onChange={(e) => {
+                            if( e.target.value === '') {
+                                setErrMsgs({...errmsgs, firstName: 'First Name Cannot be Empty'})
+                            } else {
+                                setErrMsgs({...errmsgs, firstName: ''})
+                                setUser({...user, firstName: e.target.value})
+                            }
+                        }}
                         value = {user.firstName}/>
+                        {errmsgs?.firstName && <div class="error-message">{errmsgs.firstName}</div>}
                 </div>
                 <div className="mb-3">
                     <label for="exampleInputLastName" className="form-label">Last Name</label>
                     <input type="text" className="form-control" id="exampleInputLastName" 
-                        onChange={(e) => setUser({...user, lastName: e.target.value})}
+                        onChange={(e) => {
+                            if( e.target.value === '') {
+                                setErrMsgs({...errmsgs, lastName: 'last Name Cannot be Empty'})
+                            } else {
+                                setErrMsgs({...errmsgs, lastName: ''})
+                                setUser({...user, lastName: e.target.value})}
+                            }
+                        }
                         value = {user.lastName}/>
+                        {errmsgs?.lastName && <div class="error-message">{errmsgs.lastName}</div>}
                 </div>
                 <div className="mb-3">
                     <label for="exampleInputPassword1" className="form-label">Password</label>
@@ -80,9 +99,15 @@ function Signup() {
                     <label for="exampleInputCPassword" className="form-label">Confirm Password</label>
                     <input type="password" className="form-control" id="exampleInputCPassword"
                         onChange={(e) => {
-                            setConfirmPassword(e.target.value)
+                            if(user.password != e.target.value) {
+                                setErrMsgs({...errmsgs, password: 'Passwords do not match'})
+                            } else {
+                                setErrMsgs({...errmsgs, password: ''})
+                                setConfirmPassword(e.target.value)
+                            }
                         }}
                         value = {confirmPassword}/>
+                        {errmsgs?.password && <div class="error-message">{errmsgs.password}</div>}
                 </div>
                 <div className='f-right'>
                     <span className='mr-30 mt-5 di-block' onClick={() => navigate('/login')}>Already have an account <a href="#">Login</a></span><button type="submit" className="btn btn-primary f-right" onClick={() => signUpUser()}>Register</button>

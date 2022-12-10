@@ -108,3 +108,7 @@ hr{
 .btn-cancel:focus{
   box-shadow: none;
 }
+
+.error-message {
+  color : red
+}

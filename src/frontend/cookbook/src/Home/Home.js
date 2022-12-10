@@ -11,7 +11,6 @@ function Home(props) {
     <div className="main-content">
         <Search />
         <ReceipeList />
-        {/* <DetailsView /> */}
     </div>
    )
 }

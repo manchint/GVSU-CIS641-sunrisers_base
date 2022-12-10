@@ -21,17 +21,14 @@ function Login() {
         "Access-Control-Allow-Origin": "*"
       }
     async function onClickLogin(){
-        navigate('/');
-        
-        
-        // const data = await axios.post('http://localhost:3002/signin',{
-        //     "email": email,
-        //     "password": password
-        // }, headers).then (res => {
-        //     console.log(res)
-        //     dispatch(setUserDetails(res.data));
-        //     navigate('/');
-        // });
+        const data = await axios.post('http://localhost:3002/signin',{
+            "email": email,
+            "password": password
+        }, headers).then (res => {
+            console.log(res)
+            dispatch(setUserDetails(res.data));
+            navigate('/');
+        });
 
     }
 

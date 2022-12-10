@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 const TagsInput = props => {
   const [tags, setTags] = React.useState(props.tags);
   const removeTags = indexToRemove => {
@@ -11,6 +11,9 @@ const TagsInput = props => {
       event.target.value = "";
     }
   };
+  useEffect(() => {
+    setTags(props.tags)
+  }, [props.tag])
   return (
     <div className="tags-input">
       <ul id="tags">
@@ -28,7 +31,7 @@ const TagsInput = props => {
       <input
         type="text"
         onKeyUp={event => event.key === "," ? addTags(event) : null}
-        placeholder="Press enter to add tags"
+        placeholder="Add , to add tags"
       />
     </div>
   );

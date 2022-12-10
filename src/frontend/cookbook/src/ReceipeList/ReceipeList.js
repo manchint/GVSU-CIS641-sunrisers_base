@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setReceipeList } from '../redux/receipe';
+import receipeList from '../redux/receipes.js'
 function ReceipeList(props) {
     let navigate = useNavigate();
     const dispatch = useDispatch()
@@ -13,18 +14,9 @@ function ReceipeList(props) {
     const [receipesList, setReceipesList] = useState([])
     useEffect(() => {
         //REAL
-        // const data = axios.get('http://localhost:8081/api/recepies').then(res => setReceipeList(res.data))
+        const data = axios.get('http://localhost:8081/api/recepies').then(res => setReceipeList(res.data))
 
-        //FAKE
-        if(list.length == 0) {
-        dispatch(setReceipeList([
-            { id:1, itemName: 'Chicken Tikka Masala', likes: 231},
-            { id:2, itemName: 'Potato Fry', likes : 32},
-            { id:3, itemName: 'Lamb fry', likes: 541},
-            { id:4, itemName: 'Biryani', likes : 543},
-            { id:5, itemName: 'Frozen Ice Cream', likes : 532},   
-          ]))
-        }
+        //dispatch(setReceipeList(receipeList))
     }, [])
     useEffect(() => {
         setReceipesList(list);

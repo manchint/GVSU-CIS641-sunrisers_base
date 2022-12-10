@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './PublishRecipe.css';
 import TagsInput from './TagsInput';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { addReceipe } from '../redux/receipe';
 import { useSelector } from 'react-redux';
 function PublishRecipe() {
+    const location = useLocation();
     let navigate = useNavigate();
     const dispatch = useDispatch();
     const list = useSelector(state =>  state.receipe.list)
@@ -28,20 +29,25 @@ function PublishRecipe() {
         setSrcImage(image);
         setReceipeDetails({...receipeDetails, imageOfTheRecepie: e.target.files[0].name})
     }
+    const [errmsgs, setErrMsgs] = useState({
+        name : ''
+    })
     const publishReceipe = () => {
-        navigate("/")
-        setReceipeDetails({...receipeDetails, id: list.length, ingredients : tags.toString()})
-        dispatch(addReceipe(receipeDetails));
-        
-        //     const data = axios.post('http://localhost:8081/api/recepies', receipeDetails
-        //     ).then(res => {
-        //         console.log(res)
-        //         dispatch(setUserDetails(user));
-        //         navigate("/")
-        //     })
-            
+            const data = axios.post('http://localhost:8081/api/recepies', receipeDetails
+            ).then(res => {
+                navigate("/")
+                setReceipeDetails({...receipeDetails, id: list.length, ingredients : tags.toString()})
+                dispatch(addReceipe(receipeDetails));
+            })
 
     }
+    useEffect(() => {
+        if(location.state.id) {
+            let searchItem = list.filter((item) => item.id == location.state.id)
+            setTags(searchItem[0].ingredients.split(","));
+            setReceipeDetails(searchItem[0]);
+        }
+    }, [])
   return (
     <div className='publish-recipe'>
         <h4>Publish Your Recipe</h4>
@@ -55,8 +61,15 @@ function PublishRecipe() {
                 <div className="mb-3">
                     <label for="exampleInputUsername" className="form-label">Recipe Name</label>
                     <input type="text" className="form-control" id="exampleInputUsername" 
-                        onChange={(e) => setReceipeDetails({...receipeDetails, name: e.target.value})}
+                        onChange={(e) => {
+                            if(e.target.value === '') {
+                                setErrMsgs({...errmsgs, name: 'Name Cannot be Empty'})
+                            } else {
+                                setReceipeDetails({...receipeDetails, name: e.target.value})}
+                            }
+                        }
                         value = {receipeDetails.name}/>
+                        {errmsgs?.name && <div class="error-message">{errmsgs.name}</div>}
                 </div>               
                 <div className="mb-3">
                     <label for="exampleInputCPassword" className="form-label">Calories</label>
@@ -66,7 +79,7 @@ function PublishRecipe() {
                 </div>
                 <div className="mb-3">
                     <label for="exampleInputCPassword" className="form-label">Ingredients</label>
-                    <TagsInput tags={[]} selectedTags={setTags}/>
+                    <TagsInput tags={tags} selectedTags={setTags}/>
                 </div>
                 <div className="mb-3">
                     <label for="exampleInputCPassword" className="form-label">Procedure</label>
