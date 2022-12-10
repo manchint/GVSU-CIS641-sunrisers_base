@@ -184,10 +184,10 @@ This section represents relationship between requirements and other project arti
 ## Activity Diagram Traceability
 | Artifact ID | Artifact Name | Requirement ID |
 | :-------------: | :----------: | :----------: |
-| [6](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/LogIn:SignUp_Activity_Diagram.pdf) | Sign Up and Log In | FR1-FR7, FR9-15, NFR1, NFR6, NFR15, NFR20 |
-|[7](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/ViewRecipe_Activity_Diagram.pdf)|Search and View Recipe | FR1-FR7, FR9-15, FR22-FR27, NFR1, NFR6, NFR7, NFR15, NFR20 |
-|[8](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/UploadRecipe_Activity_Diagram.pdf)|  Upload a Recipe | FR1-FR7, FR9-15, FR28-FR34, NFR1, NFR6, NFR7, NFR12, NFR15 |
-|[9](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/ReviewRecipe_Activity_Diagram.pdf)|  Review Comment on a Recipe | R1-FR7, FR9-15, FR22-FR27, FR35-FR40 , NFR1, NFR6, NFR7, NFR8, NFR13, NFR15 |
+| 6 | [Sign Up and Log In](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/LogIn:SignUp_Activity_Diagram.pdf) | FR1-FR7, FR9-15, NFR1, NFR6, NFR15, NFR20 |
+| 7 |[Search and View Recipe](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/ViewRecipe_Activity_Diagram.pdf) | FR1-FR7, FR9-15, FR22-FR27, NFR1, NFR6, NFR7, NFR15, NFR20 |
+| 8 |  [Upload a Recipe](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/UploadRecipe_Activity_Diagram.pdf) | FR1-FR7, FR9-15, FR28-FR34, NFR1, NFR6, NFR7, NFR12, NFR15 |
+| 9 |  [Review Comment on a Recipe](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/ReviewRecipe_Activity_Diagram.pdf) | R1-FR7, FR9-15, FR22-FR27, FR35-FR40 , NFR1, NFR6, NFR7, NFR8, NFR13, NFR15 |
 
 
 # Software Artifacts
