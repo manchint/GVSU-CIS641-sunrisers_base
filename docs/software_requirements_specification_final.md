@@ -62,7 +62,7 @@ This section provides a comprehensive understanding of the system’s underlying
 | FR33 | The system shall persist the uploaded recipe in the database after successful validation. |
 | FR34 | The system shall close the upload recipe form and redirect the logged-in user to the home screen after upload. |
 
-### Add a Review Comment
+### Review Comment on a Recipe
 | ID | Requirement |
 | -------------| ---------- | 
 | FR35 | The system shall allow the logged-in user to add one or more review comments on a recipe. |
@@ -156,3 +156,65 @@ Since GVSU already has an attractive and robust website, we can easily integrate
 
 ### Continuous Monitoring and Support:
 We will have a maintainace team working on the issues raised and fix the bugs.We will continuously monitor the systems's performance using Grafana. Also, we will be working on new features for continuous improvements of the system based on ongoing trends and user feedback.
+
+# Traceability links
+This section represents relationship between requirements and other project artifacts such as class diagram, use case diagram and activity diagram.
+
+## Use Case Diagram Traceability
+| Artifact ID | Artifact Name | Requirement ID |
+| :-------------: | :----------: | :----------: |
+|1| [Sign Up and Log In](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/SignUp_LogIn_UseCase_Diagram.pdf) | FR1-FR5, FR9-FR14|
+|3|[Manage Account](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/ManageAccount_UseCase_Diagram.pdf)| FR9-FR12, FR16-FR20|
+|4| [Search and View Recipe](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Search_and_View_Recipe_UseCase_Diagram.pdf)| FR22-FR24, FR26, FR27|
+|5| [Upload a Recipe](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Upload_Recipe_UseCase_Diagram.pdf)| FR9-FR12, FR28-FR32|
+|6| [Add a Review Comment and like Recipe](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Review_and_Like_Recipe_UseCase_Diagram.pdf)| FR9-FR12, FR35, FR37-FR39, FR42, FR44|
+
+
+## Class Diagram Traceability
+| Artifact Name | Requirement ID |
+| :-------------: |:----------: |
+| [User](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Search_View_Recipe_ClassDiagram.pdf) | FR2, FR3, FR9, FR11, FR13, FR16-FR21 | 
+| [SearchRecipe](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Search_View_Recipe_ClassDiagram.pdf) | FR22-FR24 |
+| [RecipeList](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Search_View_Recipe_ClassDiagram.pdf) | FR25 |
+| [RecipeDetail](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Search_View_Recipe_ClassDiagram.pdf) | FR26,FR27 |
+| [AddRecipe](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Upload_Comment_Recipe_ClassDiagram.pdf) | FR28,FR33,FR34 |
+| [CommentOnRecipe](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Upload_Comment_Recipe_ClassDiagram.pdf) | FR35-FR40 |
+
+
+## Activity Diagram Traceability
+| Artifact ID | Artifact Name | Requirement ID |
+| :-------------: | :----------: | :----------: |
+| [6](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/LogIn:SignUp_Activity_Diagram.pdf) | Sign Up and Log In | FR1-FR7, FR9-15, NFR1, NFR6, NFR15, NFR20 |
+|[7](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/ViewRecipe_Activity_Diagram.pdf)|Search and View Recipe | FR1-FR7, FR9-15, FR22-FR27, NFR1, NFR6, NFR7, NFR15, NFR20 |
+|[8](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/UploadRecipe_Activity_Diagram.pdf)|  Upload a Recipe | FR1-FR7, FR9-15, FR28-FR34, NFR1, NFR6, NFR7, NFR12, NFR15 |
+|[9](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/ReviewRecipe_Activity_Diagram.pdf)|  Review Comment on a Recipe | R1-FR7, FR9-15, FR22-FR27, FR35-FR40 , NFR1, NFR6, NFR7, NFR8, NFR13, NFR15 |
+
+
+# Software Artifacts
+This section provides the list of project artifacts such as class diagram, Use case diagram, activity diagram, object diagram and behavioral diagram.
+
+[1 - Sign Up and Log In Use Case Diagram](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/SignUp_LogIn_UseCase_Diagram.pdf)
+
+[2 - Manage Account Use Case Diagram](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/ManageAccount_UseCase_Diagram.pdf)
+
+[3 - Search and View Recipe Use Case Diagram](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Search_and_View_Recipe_UseCase_Diagram.pdf)
+
+[4 - Upload a Recipe Use Case Diagram](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Upload_Recipe_UseCase_Diagram.pdf)
+
+[5 - Review and Like Recipe Use Case Diagram](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Review_and_Like_Recipe_UseCase_Diagram.pdf)
+
+[6 - Sign Up and Log In Activity Diagram](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/LogIn:SignUp_Activity_Diagram.pdf)
+
+[7 - Search and View Recipe Activity Diagram](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/ViewRecipe_Activity_Diagram.pdf)
+
+[8 - Upload a Recipe Activity Diagram](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/UploadRecipe_Activity_Diagram.pdf)
+
+[9 - Review Comment on a Recipe Activity Diagram](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/ReviewRecipe_Activity_Diagram.pdf)
+
+[10 - Search and View Recipe Class Diagram](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Search_View_Recipe_ClassDiagram.pdf)
+
+[11 - Upload and Comment Recipe Class Diagram](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Upload_Comment_Recipe_ClassDiagram.pdf)
+
+[12 - Behavioral Diagram](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Behavioral_Diagram_Sequence_StateMachine.pdf)
+
+[13 - Combined Class Diagram and Object Diagram](https://github.com/manchint/GVSU-CIS641-sunrisers_base/blob/master/artifacts/Class%20and%20Object%20Diagram.pdf)
